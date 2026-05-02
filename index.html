@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SmartShop Electronics</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR injected by JS -->
+<div id="navbar"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-eyebrow">⚡ India's Electronics Store</div>
+    <h1>The Best <span class="accent">Electronics</span><br/>At Your Fingertips</h1>
+    <p>Mobiles, Laptops, Wearables, Audio & Accessories — handpicked for every budget.</p>
+    <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" onclick="scrollToProducts()">Shop Now</button>
+        <a href="login.html" class="btn btn-outline btn-lg">Create Account</a>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+    <div class="search-inner">
+        <span style="color:var(--text-s);font-size:1.1rem">🔍</span>
+        <input type="text" id="searchInput"
+               placeholder="Search phones, laptops, headphones..."/>
+        <button class="search-btn" onclick="doSearch()">Search</button>
+    </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="">All Products</button>
+    <button class="cat-tab" data-cat="Mobile">📱 Mobile</button>
+    <button class="cat-tab" data-cat="Laptop">💻 Laptop</button>
+    <button class="cat-tab" data-cat="Wearables">⌚ Wearables</button>
+    <button class="cat-tab" data-cat="Audio">🎧 Audio</button>
+    <button class="cat-tab" data-cat="Accessories">🔌 Accessories</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section" id="productsSection">
+    <div class="section-header">
+        <div class="section-title" id="sectionTitle">All Products</div>
+        <div class="section-count" id="sectionCount"></div>
+    </div>
+    <div class="products-grid" id="productsGrid">
+        <!-- skeleton loaders -->
+        ${[...Array(8)].join('<div class="product-card"><div class="product-img-wrap skeleton" style="height:190px"></div><div class="product-body"><div class="skeleton" style="height:16px;margin-bottom:8px"></div><div class="skeleton" style="height:14px;width:60%"></div></div></div>')}
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
